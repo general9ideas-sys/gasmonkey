@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Detailing, limpieza integral, pulido y cuidado automotor en Posadas, Misiones. Cotizá por WhatsApp.">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta property="og:title" content="Gas Monkey | Estética automotor en Posadas">
+  <meta property="og:description" content="Recuperá el brillo y el interior de tu vehículo. Mirá los servicios y pedí tu cotización por WhatsApp.">
+  <meta property="og:type" content="website">
+  <title>Gas Monkey | Estética automotor en Posadas</title>
+  <style>
+    :root {
+      --ink: #0b0b0c;
+      --ink-soft: #151517;
+      --paper: #f4f0e8;
+      --paper-strong: #fffdf8;
+      --muted: #b8b3aa;
+      --red: #ed2f24;
+      --red-dark: #bd2119;
+      --line: rgba(255, 255, 255, .12);
+      --radius: 22px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .28);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      content: "";
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 85% 8%, rgba(237, 47, 36, .18), transparent 24rem),
+        radial-gradient(circle at 3% 38%, rgba(255, 255, 255, .06), transparent 20rem),
+        var(--ink);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .demo-bar {
+      padding: 8px 20px;
+      background: #f6c84c;
+      color: #171300;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(11, 11, 12, .84);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      display: flex;
+      min-height: 74px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      letter-spacing: -.04em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border: 2px solid var(--paper);
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: inset 0 0 0 5px var(--ink);
+      font-size: .7rem;
+      letter-spacing: -.08em;
+    }
+
+    .brand-name {
+      font-size: 1.08rem;
+    }
+
+    .brand-name span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #d4d0c9;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .nav-links a:not(.button):hover {
+      color: white;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--red);
+      color: white;
+      cursor: pointer;
+      font-weight: 850;
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #ff3b2f;
+      box-shadow: 0 12px 28px rgba(237, 47, 36, .25);
+    }
+
+    .button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid #f6c84c;
+      outline-offset: 3px;
+    }
+
+    .button.secondary {
+      border: 1px solid rgba(255, 255, 255, .2);
+      background: rgba(255, 255, 255, .05);
+    }
+
+    .button.secondary:hover {
+      background: rgba(255, 255, 255, .11);
+      box-shadow: none;
+    }
+
+    .button.small {
+      min-height: 42px;
+      padding-inline: 17px;
+      font-size: .86rem;
+    }
+
+    .icon {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1.03fr .97fr;
+      gap: 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 22px;
+      color: #ded9d0;
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 30px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--red);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 24px;
+      font-size: clamp(3.5rem, 7.5vw, 7.25rem);
+      font-weight: 950;
+      letter-spacing: -.075em;
+      line-height: .84;
+      text-transform: uppercase;
+    }
+
+    h1 em {
+      display: block;
+      color: var(--red);
+      font-style: normal;
+    }
+
+    .hero-copy {
+      max-width: 590px;
+      margin-bottom: 30px;
+      color: #c9c4bb;
+      font-size: clamp(1rem, 1.5vw, 1.16rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0 0;
+      color: #9d9992;
+      font-size: .84rem;
+    }
+
+    .hero-note::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #42ce72;
+      box-shadow: 0 0 0 5px rgba(66, 206, 114, .1);
+      content: "";
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 590px;
+    }
+
+    .visual-frame {
+      position: absolute;
+      inset: 0 0 22px 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 180px 24px 24px 24px;
+      background:
+        linear-gradient(145deg, transparent 15%, rgba(0, 0, 0, .76)),
+        radial-gradient(circle at 58% 36%, #4e5054 0 8%, #242529 29%, #0d0d0f 68%);
+      box-shadow: var(--shadow);
+    }
+
+    .visual-frame::before {
+      position: absolute;
+      width: 440px;
+      height: 200px;
+      right: -45px;
+      bottom: 80px;
+      border: 2px solid rgba(255, 255, 255, .35);
+      border-radius: 56% 34% 18% 16%;
+      background:
+        linear-gradient(168deg, transparent 0 35%, rgba(255,255,255,.2) 36%, transparent 37%),
+        linear-gradient(12deg, #090a0b, #2a2b2f 48%, #0c0c0e 49%);
+      box-shadow: inset 0 -20px 35px rgba(0,0,0,.9), 0 28px 35px rgba(0,0,0,.45);
+      content: "";
+      transform: skewX(-5deg);
+    }
+
+    .visual-frame::after {
+      position: absolute;
+      width: 520px;
+      height: 2px;
+      right: -70px;
+      bottom: 74px;
+      background: linear-gradient(90deg, transparent, var(--red), transparent);
+      box-shadow: 0 0 24px 5px rgba(237,47,36,.4);
+      content: "";
+      transform: rotate(-4deg);
+    }
+
+    .visual-copy {
+      position: absolute;
+      z-index: 2;
+      top: 52px;
+      right: 42px;
+      max-width: 215px;
+      color: rgba(255,255,255,.62);
+      font-size: .8rem;
+      letter-spacing: .12em;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    .visual-number {
+      position: absolute;
+      z-index: 2;
+      bottom: 34px;
+      left: 36px;
+      color: rgba(255, 255, 255, .08);
+      font-size: 8.5rem;
+      font-weight: 950;
+      letter-spacing: -.1em;
+      line-height: 1;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 3;
+      right: -10px;
+      bottom: 0;
+      width: 250px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 18px;
+      background: rgba(27, 27, 29, .9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .floating-card strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.05rem;
+    }
+
+    .floating-card span {
+      color: #aaa59d;
+      font-size: .82rem;
+    }
+
+    .trust-strip {
+      display: grid;
+      margin-top: 54px;
+      border-block: 1px solid var(--line);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      display: flex;
+      min-height: 88px;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 18px;
+      color: #d4d0c8;
+      font-size: .87rem;
+      font-weight: 750;
+      text-align: center;
+    }
+
+    .trust-item + .trust-item {
+      border-left: 1px solid var(--line);
+    }
+
+    .trust-item svg {
+      color: var(--red);
+    }
+
+    section {
+      padding: 104px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 44px;
+    }
+
+    .section-head h2 {
+      max-width: 760px;
+      margin-bottom: 0;
+      font-size: clamp(2.35rem, 5vw, 4.7rem);
+      font-weight: 930;
+      letter-spacing: -.065em;
+      line-height: .96;
+      text-transform: uppercase;
+    }
+
+    .section-head p {
+      max-width: 390px;
+      margin-bottom: 5px;
+      color: #aaa69f;
+    }
+
+    .services {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .services .eyebrow {
+      color: #5e5a54;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      position: relative;
+      display: flex;
+      min-height: 330px;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 28px;
+      border: 1px solid #ddd7cc;
+      border-radius: var(--radius);
+      background: var(--paper-strong);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .service-card:hover {
+      z-index: 2;
+      transform: translateY(-6px);
+      box-shadow: 0 22px 55px rgba(25, 20, 13, .12);
+    }
+
+    .service-num {
+      margin-bottom: auto;
+      color: var(--red);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+      letter-spacing: -.04em;
+      line-height: 1.05;
+    }
+
+    .service-card p {
+      min-height: 72px;
+      margin-bottom: 22px;
+      color: #67625b;
+      font-size: .92rem;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--red-dark);
+      font-size: .87rem;
+      font-weight: 850;
+    }
+
+    .text-link::after {
+      content: "→";
+      transition: transform .2s ease;
+    }
+
+    .text-link:hover::after {
+      transform: translateX(4px);
+    }
+
+    .service-card.featured {
+      border-color: var(--red);
+      background: var(--red);
+      color: white;
+    }
+
+    .service-card.featured .service-num,
+    .service-card.featured p,
+    .service-card.featured .text-link {
+      color: white;
+    }
+
+    .service-card.featured::after {
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      top: -75px;
+      right: -65px;
+      border: 24px solid rgba(255,255,255,.1);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .results {
+      overflow: hidden;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+    }
+
+    .photo-card {
+      position: relative;
+      display: block;
+      min-height: 480px;
+      overflow: hidden;
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #141416;
+    }
+
+    .photo-card.small {
+      min-height: 200px;
+    }
+
+    .showcase > .photo-card {
+      min-height: 640px;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .photo-card::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,.55));
+      content: "";
+      pointer-events: none;
+    }
+
+    .showcase-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .photo-label {
+      position: absolute;
+      z-index: 3;
+      top: 18px;
+      left: 18px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--red);
+      color: white;
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .photo-caption {
+      position: absolute;
+      z-index: 3;
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      color: rgba(255,255,255,.88);
+      font-size: .82rem;
+      font-weight: 650;
+    }
+
+    .process {
+      background: #111113;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.025);
+    }
+
+    .step b {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 50px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--red);
+      font-size: .86rem;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      font-size: 1.45rem;
+      letter-spacing: -.035em;
+    }
+
+    .step p {
+      margin-bottom: 0;
+      color: #aaa69f;
+      font-size: .9rem;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .review-placeholder {
+      padding: 26px;
+      border: 1px dashed rgba(255,255,255,.19);
+      border-radius: var(--radius);
+      color: #aaa69f;
+      font-size: .88rem;
+    }
+
+    .review-placeholder strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--paper);
+      font-size: 1rem;
+    }
+
+    .location {
+      padding-top: 38px;
+    }
+
+    .location-card {
+      display: grid;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: #171719;
+      grid-template-columns: .85fr 1.15fr;
+    }
+
+    .location-copy {
+      display: flex;
+      min-height: 460px;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(32px, 5vw, 62px);
+    }
+
+    .location-copy h2 {
+      margin-bottom: 18px;
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      letter-spacing: -.06em;
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .location-copy p {
+      color: #aaa69f;
+    }
+
+    .hours {
+      display: grid;
+      margin: 20px 0 28px;
+      gap: 8px;
+      font-size: .88rem;
+    }
+
+    .hours div {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hours span {
+      color: #aaa69f;
+    }
+
+    .map-wrap {
+      min-height: 460px;
+      background: #dedbd5;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 460px;
+      border: 0;
+      filter: grayscale(1) contrast(1.05);
+    }
+
+    .quote-section {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .quote-layout {
+      display: grid;
+      align-items: start;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 72px;
+    }
+
+    .quote-copy {
+      position: sticky;
+      top: 120px;
+    }
+
+    .quote-copy h2 {
+      margin-bottom: 20px;
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      font-weight: 930;
+      letter-spacing: -.065em;
+      line-height: .94;
+      text-transform: uppercase;
+    }
+
+    .quote-copy p {
+      color: #67625b;
+    }
+
+    .quote-form {
+      display: grid;
+      padding: clamp(24px, 5vw, 42px);
+      border: 1px solid #ddd7cc;
+      border-radius: var(--radius);
+      background: var(--paper-strong);
+      gap: 20px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field label {
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid #d7d0c5;
+      border-radius: 12px;
+      background: white;
+      color: var(--ink);
+      outline: 0;
+    }
+
+    .field input,
+    .field select {
+      height: 52px;
+      padding: 0 14px;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      padding: 14px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(237,47,36,.1);
+    }
+
+    .form-note {
+      margin: -4px 0 0;
+      color: #777169;
+      font-size: .77rem;
+    }
+
+    .form-status {
+      display: none;
+      padding: 11px 13px;
+      border-radius: 10px;
+      background: #fff0ce;
+      color: #654600;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .faq {
+      background: #111113;
+    }
+
+    .faq-list {
+      max-width: 840px;
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+    }
+
+    summary {
+      display: flex;
+      min-height: 80px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      cursor: pointer;
+      font-size: 1.05rem;
+      font-weight: 800;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      color: var(--red);
+      content: "+";
+      font-size: 1.7rem;
+      font-weight: 400;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      max-width: 700px;
+      padding: 0 0 25px;
+      color: #aaa69f;
+    }
+
+    .final-cta {
+      padding: 90px 0;
+      background: var(--red);
+      color: white;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      max-width: 930px;
+      margin: 0 auto 28px;
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      font-weight: 950;
+      letter-spacing: -.075em;
+      line-height: .85;
+      text-transform: uppercase;
+    }
+
+    .final-cta .button {
+      background: white;
+      color: var(--ink);
+    }
+
+    .final-cta .button:hover {
+      background: var(--paper);
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    }
+
+    footer {
+      padding: 42px 0 95px;
+      color: #8f8b84;
+      font-size: .8rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .mobile-cta {
+      position: fixed;
+      z-index: 30;
+      right: 14px;
+      bottom: 14px;
+      left: 14px;
+      display: none;
+      min-height: 54px;
+      box-shadow: 0 14px 35px rgba(0,0,0,.4);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.button) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-grid,
+      .quote-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 460px;
+      }
+
+      .visual-frame {
+        inset-left: 0;
+      }
+
+      .services-grid,
+      .steps,
+      .reviews-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .showcase,
+      .location-card {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-stack {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .location-copy {
+        min-height: auto;
+      }
+
+      .quote-copy {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(calc(100% - 28px), var(--max));
+      }
+
+      .demo-bar {
+        font-size: .64rem;
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+
+      .nav .button {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 17vw, 5rem);
+      }
+
+      .hero-grid {
+        gap: 44px;
+      }
+
+      .hero-visual {
+        min-height: 390px;
+      }
+
+      .visual-frame {
+        inset: 0 0 18px;
+        border-radius: 100px 20px 20px;
+      }
+
+      .visual-frame::before {
+        right: -170px;
+      }
+
+      .visual-number {
+        font-size: 6rem;
+      }
+
+      .visual-copy {
+        top: 35px;
+        right: 25px;
+      }
+
+      .floating-card {
+        right: 4px;
+        width: 220px;
+      }
+
+      .trust-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .trust-item:nth-child(3) {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .trust-item:nth-child(4) {
+        border-top: 1px solid var(--line);
+      }
+
+      section {
+        padding: 78px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head h2 {
+        margin-bottom: 20px;
+      }
+
+      .services-grid,
+      .steps,
+      .reviews-grid,
+      .showcase-stack,
+      .field-row {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 280px;
+      }
+
+      .photo-card,
+      .photo-card.small {
+        min-height: 330px;
+      }
+
+      .step b {
+        margin-bottom: 34px;
+      }
+
+      .map-wrap,
+      .map-wrap iframe {
+        min-height: 360px;
+      }
+
+      .footer-grid {
+        display: grid;
+      }
+
+      .mobile-cta {
+        display: inline-flex;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">Demo comercial · reemplazar número, horarios, dirección, fotos y servicios antes de publicar</div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Gas Monkey, ir al inicio">
+        <span class="brand-mark">GM</span>
+        <span class="brand-name">GAS <span>MONKEY</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a class="button small js-whatsapp" href="#cotizar" data-track="header_whatsapp">Cotizar ahora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Estética automotor · Posadas</p>
+            <h1>Tu auto, <em>como nuevo.</em></h1>
+            <p class="hero-copy">Detailing, limpieza integral y recuperación estética con atención personalizada. Contanos qué necesita tu vehículo y recibí una cotización directa por WhatsApp.</p>
+            <div class="hero-actions">
+              <a class="button js-whatsapp" href="#cotizar" data-track="hero_whatsapp">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.84 9.84 0 0 0-8.45 14.88L2.05 22l5.25-1.5A9.94 9.94 0 1 0 12.04 2Zm0 17.9a8.1 8.1 0 0 1-4.12-1.13l-.3-.18-3.12.89.91-3.03-.2-.31A8.06 8.06 0 1 1 12.04 19.9Zm4.42-6.03c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2a7.28 7.28 0 0 1-1.34-1.66c-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.43-.59 1.63-1.15.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path></svg>
+                Cotizar por WhatsApp
+              </a>
+              <a class="button secondary" href="#servicios">Ver servicios</a>
+            </div>
+            <p class="hero-note">Respuesta durante el horario de atención</p>
+          </div>
+
+          <div class="hero-visual" aria-label="Presentación visual de estética automotor">
+            <div class="visual-frame">
+              <span class="visual-copy">Precisión en cada detalle</span>
+              <span class="visual-number">01</span>
+            </div>
+            <div class="floating-card">
+              <strong>Cotización rápida</strong>
+              <span>Envianos el modelo, el servicio y fotos del vehículo.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-strip" aria-label="Beneficios">
+          <div class="trust-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2 2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5L12 2Z"></path></svg>
+            Terminación cuidada
+          </div>
+          <div class="trust-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm1 11h-5v-2h3V6h2Z"></path></svg>
+            Turnos coordinados
+          </div>
+          <div class="trust-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m9 16.17-3.88-3.88L3.7 13.7 9 19 20.3 7.7l-1.42-1.41Z"></path></svg>
+            Presupuesto previo
+          </div>
+          <div class="trust-item">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z"></path></svg>
+            Atención en Posadas
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicios">
+      <div class="container">
+        <p class="eyebrow">Servicios</p>
+        <div class="section-head">
+          <h2>El tratamiento indicado para cada vehículo.</h2>
+          <p>Seleccioná un servicio para iniciar una consulta. El valor final depende del estado y tamaño del vehículo.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card featured">
+            <span class="service-num">01 · DESTACADO</span>
+            <h3>Detailing integral</h3>
+            <p>Tratamiento completo de interior y exterior para recuperar presencia, limpieza y terminación.</p>
+            <a class="text-link js-service" href="#cotizar" data-service="Detailing integral">Quiero cotizar</a>
+          </article>
+          <article class="service-card">
+            <span class="service-num">02</span>
+            <h3>Limpieza de tapizados</h3>
+            <p>Limpieza profunda de asientos, alfombras, paneles y superficies interiores.</p>
+            <a class="text-link js-service" href="#cotizar" data-service="Limpieza de tapizados">Quiero cotizar</a>
+          </article>
+          <article class="service-card">
+            <span class="service-num">03</span>
+            <h3>Pulido y corrección</h3>
+            <p>Recuperación del brillo y reducción de marcas superficiales sobre la pintura.</p>
+            <a class="text-link js-service" href="#cotizar" data-service="Pulido y corrección de pintura">Quiero cotizar</a>
+          </article>
+          <article class="service-card">
+            <span class="service-num">04</span>
+            <h3>Protección cerámica</h3>
+            <p>Protección de larga duración, brillo profundo y mantenimiento exterior más sencillo.</p>
+            <a class="text-link js-service" href="#cotizar" data-service="Protección cerámica">Quiero cotizar</a>
+          </article>
+          <article class="service-card">
+            <span class="service-num">05</span>
+            <h3>Lavado premium</h3>
+            <p>Lavado minucioso con atención especial en llantas, terminaciones y detalles exteriores.</p>
+            <a class="text-link js-service" href="#cotizar" data-service="Lavado premium">Quiero cotizar</a>
+          </article>
+          <article class="service-card">
+            <span class="service-num">06</span>
+            <h3>Evaluación personalizada</h3>
+            <p>¿No sabés qué tratamiento elegir? Mandanos fotos y te recomendamos una alternativa.</p>
+            <a class="text-link js-service" href="#cotizar" data-service="Evaluación personalizada">Consultar</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="trabajos">
+      <div class="container">
+        <p class="eyebrow">Antes y después</p>
+        <div class="section-head">
+          <h2>El resultado tiene que verse.</h2>
+          <p>Imágenes de muestra para la demo. Reemplazalas con fotografías reales del negocio antes de publicar.</p>
+        </div>
+        <div class="showcase">
+          <figure class="photo-card">
+            <span class="photo-label">Detalle exterior</span>
+            <img src="images/trabajo-principal.jpg" alt="Vehículo con terminación brillante después del detailing" width="1600" height="1067" loading="lazy">
+            <figcaption class="photo-caption">Brillo y limpieza de carcasa completa</figcaption>
+          </figure>
+          <div class="showcase-stack">
+            <figure class="photo-card small">
+              <span class="photo-label">Interior</span>
+              <img src="images/interior.jpg" alt="Interior de vehículo limpio y acondicionado" width="1200" height="800" loading="lazy">
+              <figcaption class="photo-caption">Tapizados y paneles revitalizados</figcaption>
+            </figure>
+            <figure class="photo-card small">
+              <span class="photo-label">Exterior</span>
+              <img src="images/exterior.jpg" alt="Exterior de vehículo con pintura corregida y brillante" width="1200" height="800" loading="lazy">
+              <figcaption class="photo-caption">Pintura con profundidad y reflejo</figcaption>
+            </figure>
+            <figure class="photo-card small">
+              <span class="photo-label">Pulido</span>
+              <img src="images/detalle.jpg" alt="Vehículo deportivo con acabado de pulido premium" width="1200" height="800" loading="lazy">
+              <figcaption class="photo-caption">Corrección y acabado premium</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <p class="eyebrow">Cómo funciona</p>
+        <div class="section-head">
+          <h2>De la consulta al turno, sin vueltas.</h2>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <b>01</b>
+            <h3>Contanos qué necesitás</h3>
+            <p>Elegí un servicio, indicá el vehículo y describí brevemente su estado.</p>
+          </article>
+          <article class="step">
+            <b>02</b>
+            <h3>Mandanos fotos</h3>
+            <p>Al abrir WhatsApp podés adjuntar imágenes para recibir una evaluación más precisa.</p>
+          </article>
+          <article class="step">
+            <b>03</b>
+            <h3>Coordinamos el turno</h3>
+            <p>Confirmamos alcance, presupuesto orientativo, fecha y tiempo estimado del trabajo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="container">
+        <p class="eyebrow">Opiniones</p>
+        <div class="section-head">
+          <h2>Confianza construida trabajo a trabajo.</h2>
+          <p>No se incluyeron testimonios ficticios. Antes de publicar, completar con reseñas verificables de clientes reales.</p>
+        </div>
+        <div class="reviews-grid">
+          <div class="review-placeholder">
+            <strong>Reseña verificada #01</strong>
+            Agregar comentario real, nombre autorizado y servicio realizado.
+          </div>
+          <div class="review-placeholder">
+            <strong>Reseña verificada #02</strong>
+            Agregar comentario real, nombre autorizado y servicio realizado.
+          </div>
+          <div class="review-placeholder">
+            <strong>Reseña verificada #03</strong>
+            Agregar comentario real, nombre autorizado y servicio realizado.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="ubicacion">
+      <div class="container">
+        <div class="location-card">
+          <div class="location-copy">
+            <p class="eyebrow">Ubicación</p>
+            <h2>Encontranos en Posadas.</h2>
+            <p>La dirección y los horarios deben confirmarse con el negocio antes de publicar la página.</p>
+            <div class="hours">
+              <div><span>Lunes a viernes</span><strong>Horario a confirmar</strong></div>
+              <div><span>Sábados</span><strong>Horario a confirmar</strong></div>
+              <div><span>Domingos</span><strong>Cerrado / confirmar</strong></div>
+            </div>
+            <a class="button small" href="https://www.google.com/maps/search/?api=1&amp;query=Gas+Monkey+Posadas+Misiones" target="_blank" rel="noopener" data-track="maps_click">Abrir en Google Maps</a>
+          </div>
+          <div class="map-wrap">
+            <iframe title="Mapa de búsqueda de Gas Monkey en Posadas" src="https://www.google.com/maps?q=Gas%20Monkey%20Posadas%20Misiones&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section" id="cotizar">
+      <div class="container quote-layout">
+        <div class="quote-copy">
+          <p class="eyebrow">Cotización</p>
+          <h2>Contanos sobre tu vehículo.</h2>
+          <p>Completá los datos y abriremos WhatsApp con tu consulta preparada. Después vas a poder adjuntar las fotografías.</p>
+        </div>
+
+        <form class="quote-form" id="quoteForm">
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Tu nombre" required="">
+            </div>
+            <div class="field">
+              <label for="vehicle">Vehículo</label>
+              <input id="vehicle" name="vehicle" placeholder="Ej.: Toyota Corolla 2020" required="">
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">Servicio</label>
+            <select id="service" name="service" required="">
+              <option value="">Seleccionar</option>
+              <option>Detailing integral</option>
+              <option>Limpieza de tapizados</option>
+              <option>Pulido y corrección de pintura</option>
+              <option>Protección cerámica</option>
+              <option>Lavado premium</option>
+              <option>Evaluación personalizada</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="detail">¿Qué necesitás resolver?</label>
+            <textarea id="detail" name="detail" placeholder="Contanos brevemente el estado del vehículo o el resultado que buscás."></textarea>
+          </div>
+          <p class="form-note">Al continuar aceptás que Gas Monkey use estos datos únicamente para responder la consulta. No se almacenan en esta página.</p>
+          <div class="form-status" id="formStatus" role="alert">La demo todavía no tiene configurado el número real de WhatsApp.</div>
+          <button class="button" type="submit">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.84 9.84 0 0 0-8.45 14.88L2.05 22l5.25-1.5A9.94 9.94 0 1 0 12.04 2Zm0 17.9a8.1 8.1 0 0 1-4.12-1.13l-.3-.18-3.12.89.91-3.03-.2-.31A8.06 8.06 0 1 1 12.04 19.9Z"></path></svg>
+            Continuar por WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <div class="section-head">
+          <h2>Antes de reservar.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>¿Cuánto demora un trabajo?</summary>
+            <p>Depende del servicio y del estado del vehículo. El tiempo estimado se informa junto con la cotización antes de confirmar el turno.</p>
+          </details>
+          <details>
+            <summary>¿El precio puede cotizarse por fotografías?</summary>
+            <p>Las fotografías permiten realizar una primera evaluación. Si aparecen condiciones no visibles, cualquier cambio de alcance debe informarse antes de comenzar.</p>
+          </details>
+          <details>
+            <summary>¿Necesito reservar turno?</summary>
+            <p>La página está preparada para trabajar con turnos coordinados. Esta política debe confirmarse con Gas Monkey antes de publicar.</p>
+          </details>
+          <details>
+            <summary>¿Qué medios de pago aceptan?</summary>
+            <p>Los medios de pago y las condiciones de reserva deben agregarse luego de ser confirmados por el negocio.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <h2>Tu próximo resultado empieza acá.</h2>
+        <a class="button js-whatsapp" href="#cotizar" data-track="final_whatsapp">Pedir cotización</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#inicio">
+          <span class="brand-mark">GM</span>
+          <span class="brand-name">GAS <span>MONKEY</span></span>
+        </a>
+        <p style="margin:12px 0 0">Posadas, Misiones · Argentina</p>
+      </div>
+      <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#cotizar">Cotización</a>
+        <span>© <span id="year">2026</span> Gas Monkey</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="button mobile-cta js-whatsapp" href="#cotizar" data-track="mobile_whatsapp">Cotizar por WhatsApp</a>
+
+  <script>
+    /*
+      CONFIGURACIÓN PREVIA A PUBLICAR
+      1. Reemplazar el número de ejemplo por el WhatsApp real en formato internacional, sin + ni espacios.
+      2. Confirmar dirección, horarios y servicios.
+      3. Reemplazar los espacios de fotografías y reseñas por material real autorizado.
+      4. Agregar GA4 o Meta Pixel solamente con aviso de privacidad/consentimiento cuando corresponda.
+      5. Verificar autorización para usar el nombre y la identidad visual del negocio.
+    */
+    const WHATSAPP_NUMBER = "5493764000000";
+    const DEMO_NUMBER = "5493764000000";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const track = (eventName, detail = {}) => {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: eventName, ...detail });
+    };
+
+    const getSource = () => {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("utm_source") || document.referrer || "acceso directo";
+    };
+
+    const openWhatsApp = (message) => {
+      if (WHATSAPP_NUMBER === DEMO_NUMBER) {
+        const status = document.getElementById("formStatus");
+        status.style.display = "block";
+        status.scrollIntoView({ behavior: "smooth", block: "center" });
+        return false;
+      }
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      track("whatsapp_open", { source: getSource() });
+      window.open(url, "_blank", "noopener");
+      return true;
+    };
+
+    document.querySelectorAll(".js-whatsapp").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (WHATSAPP_NUMBER === DEMO_NUMBER) {
+          event.preventDefault();
+          document.getElementById("cotizar").scrollIntoView({ behavior: "smooth" });
+          document.getElementById("formStatus").style.display = "block";
+        }
+        track(link.dataset.track || "whatsapp_click", { source: getSource() });
+      });
+    });
+
+    document.querySelectorAll(".js-service").forEach((link) => {
+      link.addEventListener("click", () => {
+        document.getElementById("service").value = link.dataset.service;
+        track("service_interest", { service: link.dataset.service });
+      });
+    });
+
+    document.querySelectorAll("[data-track]:not(.js-whatsapp)").forEach((element) => {
+      element.addEventListener("click", () => track(element.dataset.track));
+    });
+
+    document.getElementById("quoteForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const message = [
+        "Hola Gas Monkey, quiero solicitar una cotización.",
+        "",
+        `Nombre: ${data.get("name")}`,
+        `Vehículo: ${data.get("vehicle")}`,
+        `Servicio: ${data.get("service")}`,
+        data.get("detail") ? `Detalle: ${data.get("detail")}` : "",
+        "",
+        `Origen de la consulta: ${getSource()}`,
+        "Ahora adjunto fotos del vehículo."
+      ].filter(Boolean).join("\n");
+
+      track("quote_submit", {
+        service: data.get("service"),
+        source: getSource()
+      });
+      openWhatsApp(message);
+    });
+  </script>
+
+
+</body></html>
