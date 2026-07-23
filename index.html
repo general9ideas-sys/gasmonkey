@@ -110,30 +110,18 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 950;
-      letter-spacing: -.04em;
+      line-height: 0;
     }
 
-    .brand-mark {
-      display: grid;
-      width: 38px;
-      height: 38px;
-      place-items: center;
-      border: 2px solid var(--paper);
-      border-radius: 50%;
-      background: var(--red);
-      box-shadow: inset 0 0 0 5px var(--ink);
-      font-size: .7rem;
-      letter-spacing: -.08em;
+    .brand-logo {
+      display: block;
+      width: auto;
+      height: 58px;
+      border-radius: 10px;
     }
 
-    .brand-name {
-      font-size: 1.08rem;
-    }
-
-    .brand-name span {
-      color: var(--red);
+    .footer .brand-logo {
+      height: 72px;
     }
 
     .nav-links {
@@ -1009,6 +997,10 @@
         min-height: 64px;
       }
 
+      .brand-logo {
+        height: 48px;
+      }
+
       .nav .button {
         display: none;
       }
@@ -1129,8 +1121,7 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#inicio" aria-label="Gas Monkey, ir al inicio">
-        <span class="brand-mark">GM</span>
-        <span class="brand-name">GAS <span>MONKEY</span></span>
+        <img class="brand-logo" src="images/logo.png" alt="Gas Monkey servicios" width="220" height="220">
       </a>
       <nav class="nav-links" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
@@ -1429,9 +1420,8 @@
   <footer>
     <div class="container footer-grid">
       <div>
-        <a class="brand" href="#inicio">
-          <span class="brand-mark">GM</span>
-          <span class="brand-name">GAS <span>MONKEY</span></span>
+        <a class="brand" href="#inicio" aria-label="Gas Monkey, ir al inicio">
+          <img class="brand-logo" src="images/logo.png" alt="Gas Monkey servicios" width="220" height="220">
         </a>
         <p style="margin:12px 0 0">Posadas, Misiones · Argentina</p>
       </div>
