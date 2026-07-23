@@ -481,26 +481,28 @@
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, .13);
       border-radius: 180px 24px 24px 24px;
-      background:
-        linear-gradient(145deg, transparent 15%, rgba(0, 0, 0, .76)),
-        radial-gradient(circle at 58% 36%, #4e5054 0 8%, #242529 29%, #0d0d0f 68%);
+      background: #0d0d0f;
       box-shadow: var(--shadow);
+    }
+
+    .visual-frame video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
     }
 
     .visual-frame::before {
       position: absolute;
-      width: 440px;
-      height: 200px;
-      right: -45px;
-      bottom: 80px;
-      border: 2px solid rgba(255, 255, 255, .35);
-      border-radius: 56% 34% 18% 16%;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
       background:
-        linear-gradient(168deg, transparent 0 35%, rgba(255,255,255,.2) 36%, transparent 37%),
-        linear-gradient(12deg, #090a0b, #2a2b2f 48%, #0c0c0e 49%);
-      box-shadow: inset 0 -20px 35px rgba(0,0,0,.9), 0 28px 35px rgba(0,0,0,.45);
+        linear-gradient(160deg, rgba(0, 0, 0, .18) 10%, rgba(0, 0, 0, .45) 100%),
+        linear-gradient(0deg, rgba(237, 47, 36, .1), transparent 42%);
       content: "";
-      transform: skewX(-5deg);
     }
 
     .visual-frame::after {
@@ -509,6 +511,7 @@
       height: 2px;
       right: -70px;
       bottom: 74px;
+      z-index: 2;
       background: linear-gradient(90deg, transparent, var(--red), transparent);
       box-shadow: 0 0 24px 5px rgba(237,47,36,.4);
       content: "";
@@ -517,23 +520,24 @@
 
     .visual-copy {
       position: absolute;
-      z-index: 2;
+      z-index: 3;
       top: 52px;
       right: 42px;
       max-width: 215px;
-      color: rgba(255,255,255,.62);
+      color: rgba(255,255,255,.78);
       font-size: .8rem;
       letter-spacing: .12em;
       text-align: right;
       text-transform: uppercase;
+      text-shadow: 0 2px 12px rgba(0,0,0,.45);
     }
 
     .visual-number {
       position: absolute;
-      z-index: 2;
+      z-index: 3;
       bottom: 34px;
       left: 36px;
-      color: rgba(255, 255, 255, .08);
+      color: rgba(255, 255, 255, .1);
       font-size: 8.5rem;
       font-weight: 950;
       letter-spacing: -.1em;
@@ -1223,10 +1227,6 @@
         border-radius: 100px 20px 20px;
       }
 
-      .visual-frame::before {
-        right: -170px;
-      }
-
       .visual-number {
         font-size: 6rem;
       }
@@ -1324,6 +1324,10 @@
       .intro-car-light {
         opacity: 0 !important;
       }
+
+      .visual-frame video {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -1377,6 +1381,15 @@
 
           <div class="hero-visual" aria-label="Presentación visual de estética automotor">
             <div class="visual-frame">
+              <video
+                src="images/hero-ford-territory.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Ford Territory 0km con sellado cerámico"
+              ></video>
               <span class="visual-copy">Precisión en cada detalle</span>
               <span class="visual-number">01</span>
             </div>
