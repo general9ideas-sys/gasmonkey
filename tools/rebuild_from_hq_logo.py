@@ -78,10 +78,10 @@ def extract(y0, y1, mode="white", pad=14, scale=4):
     return result
 
 
-# Bands tuned for 1024x1024 HQ logo
-car = extract(320, 530, mode="white", scale=3)
-name = extract(530, 620, mode="white", scale=3)
-tag = extract(620, 720, mode="red", scale=3)
+# Bands tuned for 1024x1024 HQ logo (solid black background)
+car = extract(290, 540, mode="white", scale=3)
+name = extract(540, 635, mode="white", scale=3)
+tag = extract(630, 740, mode="red", scale=3)
 
 car.save(ROOT / "intro-car.png", optimize=True)
 name.save(ROOT / "intro-name.png", optimize=True)
