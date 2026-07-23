@@ -481,28 +481,26 @@
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, .13);
       border-radius: 180px 24px 24px 24px;
-      background: #0d0d0f;
+      background:
+        linear-gradient(145deg, transparent 15%, rgba(0, 0, 0, .76)),
+        radial-gradient(circle at 58% 36%, #4e5054 0 8%, #242529 29%, #0d0d0f 68%);
       box-shadow: var(--shadow);
-    }
-
-    .visual-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 45% 35%;
-      filter: saturate(1.05) contrast(1.04);
-      transform: scale(1.03);
     }
 
     .visual-frame::before {
       position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
+      width: 440px;
+      height: 200px;
+      right: -45px;
+      bottom: 80px;
+      border: 2px solid rgba(255, 255, 255, .35);
+      border-radius: 56% 34% 18% 16%;
       background:
-        linear-gradient(160deg, rgba(0,0,0,.15) 20%, rgba(0,0,0,.55) 100%),
-        linear-gradient(0deg, rgba(237,47,36,.12), transparent 40%);
+        linear-gradient(168deg, transparent 0 35%, rgba(255,255,255,.2) 36%, transparent 37%),
+        linear-gradient(12deg, #090a0b, #2a2b2f 48%, #0c0c0e 49%);
+      box-shadow: inset 0 -20px 35px rgba(0,0,0,.9), 0 28px 35px rgba(0,0,0,.45);
       content: "";
+      transform: skewX(-5deg);
     }
 
     .visual-frame::after {
@@ -511,7 +509,6 @@
       height: 2px;
       right: -70px;
       bottom: 74px;
-      z-index: 2;
       background: linear-gradient(90deg, transparent, var(--red), transparent);
       box-shadow: 0 0 24px 5px rgba(237,47,36,.4);
       content: "";
@@ -1226,6 +1223,10 @@
         border-radius: 100px 20px 20px;
       }
 
+      .visual-frame::before {
+        right: -170px;
+      }
+
       .visual-number {
         font-size: 6rem;
       }
@@ -1374,10 +1375,9 @@
             <p class="hero-note">Respuesta durante el horario de atención</p>
           </div>
 
-          <div class="hero-visual" aria-label="Trabajo real de Gas Monkey servicios">
+          <div class="hero-visual" aria-label="Presentación visual de estética automotor">
             <div class="visual-frame">
-              <img src="images/hero-trabajo.jpg" alt="Unidad atendida por Gas Monkey servicios" width="1400" height="1750">
-              <span class="visual-copy">Trabajos reales</span>
+              <span class="visual-copy">Precisión en cada detalle</span>
               <span class="visual-number">01</span>
             </div>
             <div class="floating-card">
@@ -1459,32 +1459,32 @@
 
     <section class="results" id="trabajos">
       <div class="container">
-        <p class="eyebrow">Trabajos</p>
+        <p class="eyebrow">Antes y después</p>
         <div class="section-head">
           <h2>El resultado tiene que verse.</h2>
-          <p>Selección de trabajos reales publicados en <a href="https://www.instagram.com/gasmonkeyservicios/" target="_blank" rel="noopener noreferrer">@gasmonkeyservicios</a>.</p>
+          <p>Imágenes de muestra para la demo. Reemplazalas con fotografías reales del negocio antes de publicar.</p>
         </div>
         <div class="showcase">
           <figure class="photo-card">
-            <span class="photo-label">Taller</span>
-            <img src="images/trabajo-principal.jpg" alt="Taller de Gas Monkey con vehículos en trabajo" width="1600" height="1067" loading="lazy">
-            <figcaption class="photo-caption">Espacio de trabajo con unidades en proceso</figcaption>
+            <span class="photo-label">Detalle exterior</span>
+            <img src="images/trabajo-principal.jpg" alt="Vehículo con terminación brillante después del detailing" width="1600" height="1067" loading="lazy">
+            <figcaption class="photo-caption">Brillo y limpieza de carcasa completa</figcaption>
           </figure>
           <div class="showcase-stack">
             <figure class="photo-card small">
-              <span class="photo-label">Mecánica</span>
-              <img src="images/interior.jpg" alt="Reparación de sistema de frenos en unidad pesada" width="1200" height="800" loading="lazy">
-              <figcaption class="photo-caption">Reparación de sistemas de freno</figcaption>
+              <span class="photo-label">Interior</span>
+              <img src="images/interior.jpg" alt="Interior de vehículo limpio y acondicionado" width="1200" height="800" loading="lazy">
+              <figcaption class="photo-caption">Tapizados y paneles revitalizados</figcaption>
             </figure>
             <figure class="photo-card small">
-              <span class="photo-label">Polarizado</span>
-              <img src="images/exterior.jpg" alt="Camioneta con polarizado terminado" width="1200" height="800" loading="lazy">
-              <figcaption class="photo-caption">Polarizado terminado en unidad</figcaption>
+              <span class="photo-label">Exterior</span>
+              <img src="images/exterior.jpg" alt="Exterior de vehículo con pintura corregida y brillante" width="1200" height="800" loading="lazy">
+              <figcaption class="photo-caption">Pintura con profundidad y reflejo</figcaption>
             </figure>
             <figure class="photo-card small">
-              <span class="photo-label">Detalle</span>
-              <img src="images/detalle.jpg" alt="Aplicación de polarizado en puerta de vidrio" width="1200" height="800" loading="lazy">
-              <figcaption class="photo-caption">Polarizado de precisión en obra</figcaption>
+              <span class="photo-label">Pulido</span>
+              <img src="images/detalle.jpg" alt="Vehículo deportivo con acabado de pulido premium" width="1200" height="800" loading="lazy">
+              <figcaption class="photo-caption">Corrección y acabado premium</figcaption>
             </figure>
           </div>
         </div>
@@ -1654,7 +1654,6 @@
         <a href="#servicios">Servicios</a>
         <a href="#ubicacion">Ubicación</a>
         <a href="#cotizar">Cotización</a>
-        <a href="https://www.instagram.com/gasmonkeyservicios/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <span>© <span id="year">2026</span> Gas Monkey</span>
       </div>
     </div>
