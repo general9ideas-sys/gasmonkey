@@ -79,9 +79,9 @@ def extract(y0, y1, mode="white", pad=14, scale=4):
 
 
 # Bands tuned for 1024x1024 HQ logo (solid black background)
-car = extract(290, 540, mode="white", scale=3)
-name = extract(540, 635, mode="white", scale=3)
-tag = extract(630, 740, mode="red", scale=3)
+car = extract(290, 540, mode="white", pad=4, scale=3)
+name = extract(540, 635, mode="white", pad=4, scale=3)
+tag = extract(630, 740, mode="red", pad=4, scale=3)
 
 car.save(ROOT / "intro-car.png", optimize=True)
 name.save(ROOT / "intro-name.png", optimize=True)
@@ -96,7 +96,7 @@ edge.putalpha(edge_alpha)
 edge.save(ROOT / "intro-car-edge.png", optimize=True)
 
 # Transparent full logo for header/footer
-gap = 28
+gap = 8
 cw = max(car.width, name.width, tag.width) + 40
 ch = car.height + name.height + tag.height + gap * 2 + 40
 logo = Image.new("RGBA", (cw, ch), (0, 0, 0, 0))
