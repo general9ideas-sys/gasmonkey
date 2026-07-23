@@ -8,9 +8,6 @@
   <meta property="og:description" content="Recuperá el brillo y el interior de tu vehículo. Mirá los servicios y pedí tu cotización por WhatsApp.">
   <meta property="og:type" content="website">
   <title>Gas Monkey | Estética automotor en Posadas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     :root {
       --ink: #0b0b0c;
@@ -224,82 +221,74 @@
     }
 
     .intro-car-wrap {
-      width: min(100%, 640px);
+      position: relative;
+      width: min(100%, 720px);
       transform: translateX(120%);
       opacity: 0;
       animation: introCarIn 1.05s cubic-bezier(.16, 1, .3, 1) .95s forwards;
     }
 
-    .intro-car {
+    .intro-car-img,
+    .intro-car-light {
       display: block;
       width: 100%;
       height: auto;
-      overflow: visible;
+    }
+
+    .intro-car-img {
+      position: relative;
+      z-index: 1;
       filter: drop-shadow(0 18px 40px rgba(0,0,0,.45));
     }
 
-    .intro-car-base {
-      fill: none;
-      stroke: rgba(255,255,255,.92);
-      stroke-width: 2.4;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .intro-car-detail {
-      fill: none;
-      stroke: rgba(255,255,255,.55);
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .intro-car-wheel {
-      fill: none;
-      stroke: rgba(255,255,255,.9);
-      stroke-width: 2.2;
-    }
-
     .intro-car-light {
-      fill: none;
-      stroke: #ff4d42;
-      stroke-width: 4;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-dasharray: 70 930;
-      stroke-dashoffset: 1000;
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       opacity: 0;
-      filter: drop-shadow(0 0 8px rgba(255, 77, 66, .95)) drop-shadow(0 0 18px rgba(237, 47, 36, .75));
-      animation: introCarLight 1.55s ease-in-out 2.05s forwards;
+      pointer-events: none;
+      filter:
+        brightness(0) saturate(100%) invert(24%) sepia(98%) saturate(3200%) hue-rotate(346deg) brightness(1.15)
+        drop-shadow(0 0 8px rgba(255, 70, 60, .95))
+        drop-shadow(0 0 18px rgba(237, 47, 36, .8));
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 42%, #000 58%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 42%, #000 58%, transparent 100%);
+      -webkit-mask-size: 220% 100%;
+      mask-size: 220% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: 120% 0;
+      mask-position: 120% 0;
+      animation: introCarLight 1.6s ease-in-out 2.05s forwards;
     }
 
     .intro-wordmark {
       display: grid;
-      gap: 2px;
+      gap: 10px;
       justify-items: center;
+      width: min(100%, 760px);
+    }
+
+    .intro-name,
+    .intro-tag {
+      display: block;
+      width: auto;
+      height: auto;
+      margin: 0;
     }
 
     .intro-name {
-      margin: 0;
-      color: #fff;
-      font-family: "Bebas Neue", Impact, Haettenschweiler, sans-serif;
-      font-size: clamp(3.4rem, 12vw, 7.2rem);
-      font-weight: 400;
-      letter-spacing: .04em;
-      line-height: .9;
-      text-transform: uppercase;
-      font-style: italic;
+      width: min(100%, 680px);
       transform: translateX(-120%);
       opacity: 0;
       animation: introFromLeft .95s cubic-bezier(.16, 1, .3, 1) .12s forwards;
     }
 
     .intro-tag {
-      margin: 0;
-      color: var(--red);
-      font-family: "Great Vibes", "Segoe Script", cursive;
-      font-size: clamp(2.4rem, 7vw, 4.4rem);
-      line-height: 1;
+      width: min(42%, 280px);
       transform: translateX(120%);
       opacity: 0;
       animation: introFromRight .95s cubic-bezier(.16, 1, .3, 1) .38s forwards;
@@ -341,18 +330,21 @@
     @keyframes introCarLight {
       0% {
         opacity: 0;
-        stroke-dashoffset: 1000;
+        -webkit-mask-position: 130% 0;
+        mask-position: 130% 0;
       }
-      8% {
+      10% {
         opacity: 1;
       }
       78% {
         opacity: 1;
-        stroke-dashoffset: 0;
+        -webkit-mask-position: -30% 0;
+        mask-position: -30% 0;
       }
       100% {
         opacity: 0;
-        stroke-dashoffset: -70;
+        -webkit-mask-position: -45% 0;
+        mask-position: -45% 0;
       }
     }
 
@@ -1311,56 +1303,12 @@
     <section class="intro-stage" aria-label="Presentación animada de Gas Monkey">
       <div class="intro-stage__inner">
         <div class="intro-car-wrap" aria-hidden="true">
-          <svg class="intro-car" viewBox="0 0 640 220" role="presentation">
-            <!-- Classic muscle car side profile (facing left) -->
-            <path class="intro-car-base" d="M78 158
-              C92 128 118 104 156 96
-              L214 88
-              L248 48
-              L338 40
-              L404 48
-              L456 86
-              L520 94
-              C558 100 586 118 602 146
-              L612 158
-              L566 158
-              C552 136 528 124 504 124
-              C480 124 456 136 442 158
-              L248 158
-              C234 136 210 124 186 124
-              C162 124 138 136 124 158
-              Z"></path>
-            <path class="intro-car-detail" d="M248 48 L268 88 L404 88 L404 48"></path>
-            <path class="intro-car-detail" d="M214 88 L248 88"></path>
-            <path class="intro-car-detail" d="M456 86 L490 92"></path>
-            <path class="intro-car-detail" d="M156 96 L176 112 L210 112"></path>
-            <circle class="intro-car-wheel" cx="186" cy="158" r="28"></circle>
-            <circle class="intro-car-wheel" cx="186" cy="158" r="11"></circle>
-            <circle class="intro-car-wheel" cx="504" cy="158" r="28"></circle>
-            <circle class="intro-car-wheel" cx="504" cy="158" r="11"></circle>
-            <!-- Light trace along the body outline -->
-            <path class="intro-car-light" pathLength="1000" d="M78 158
-              C92 128 118 104 156 96
-              L214 88
-              L248 48
-              L338 40
-              L404 48
-              L456 86
-              L520 94
-              C558 100 586 118 602 146
-              L612 158
-              L566 158
-              C552 136 528 124 504 124
-              C480 124 456 136 442 158
-              L248 158
-              C234 136 210 124 186 124
-              C162 124 138 136 124 158
-              Z"></path>
-          </svg>
+          <img class="intro-car-img" src="images/intro-car.png" alt="" width="1476" height="396">
+          <img class="intro-car-light" src="images/intro-car-edge.png" alt="" width="1476" height="396">
         </div>
         <div class="intro-wordmark">
-          <p class="intro-name">Gas Monkey</p>
-          <p class="intro-tag">servicios</p>
+          <img class="intro-name" src="images/intro-name.png" alt="Gas Monkey" width="1424" height="172">
+          <img class="intro-tag" src="images/intro-tag.png" alt="servicios" width="696" height="196">
         </div>
       </div>
     </section>
