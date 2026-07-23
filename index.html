@@ -122,15 +122,19 @@
       display: inline-flex;
       align-items: center;
       line-height: 0;
-      opacity: var(--header-p);
-      transform:
-        translateY(calc(-50% - (1 - var(--header-p)) * 10px))
-        scale(calc(.94 + .06 * var(--header-p)));
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(calc(-50% - 10px)) scale(.94);
       pointer-events: none;
       will-change: opacity, transform;
     }
 
     .site-header.is-scrolled .brand {
+      opacity: var(--header-p);
+      visibility: visible;
+      transform:
+        translateY(calc(-50% - (1 - var(--header-p)) * 10px))
+        scale(calc(.94 + .06 * var(--header-p)));
       pointer-events: auto;
     }
 
@@ -1674,19 +1678,24 @@
     const siteHeader = document.querySelector(".site-header");
     const navShell = siteHeader.querySelector(".nav");
     const navLinks = siteHeader.querySelector(".nav-links");
+    const introStage = document.querySelector(".intro-stage");
     let headerRaf = 0;
 
     const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
     const updateHeader = () => {
       headerRaf = 0;
-      const progress = Math.min(1, Math.max(0, window.scrollY / 220));
+      const introHeight = introStage ? introStage.offsetHeight : window.innerHeight;
+      // Empieza a revelar el logo recién al salir de la animación del intro
+      const revealStart = Math.max(120, introHeight * 0.72);
+      const revealRange = Math.max(180, window.innerHeight * 0.28);
+      const progress = Math.min(1, Math.max(0, (window.scrollY - revealStart) / revealRange));
       const eased = easeOutCubic(progress);
       const travel = Math.max(0, (navShell.clientWidth - navLinks.offsetWidth) / 2);
 
       siteHeader.style.setProperty("--header-p", eased.toFixed(4));
       siteHeader.style.setProperty("--nav-travel", `${travel.toFixed(1)}px`);
-      siteHeader.classList.toggle("is-scrolled", progress > 0.04);
+      siteHeader.classList.toggle("is-scrolled", progress > 0.02);
     };
 
     const requestHeaderUpdate = () => {
